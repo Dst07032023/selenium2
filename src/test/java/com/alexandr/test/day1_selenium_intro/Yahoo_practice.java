@@ -10,9 +10,14 @@ public class Yahoo_practice {
     public static void main(String[] args) {
 
         //TC #1: Yahoo Title Verification
-        //1. Open Chrome browser
+        //setup browser driver
         WebDriverManager.chromedriver().setup();
+
+        //1. Open Chrome browser
+        //this line opens EMPTY BROWSER
         WebDriver driver = new ChromeDriver();
+
+        //maximize browser
         driver.manage().window().maximize();
 
         //2. Go to https://www.yahoo.com
@@ -24,5 +29,22 @@ public class Yahoo_practice {
 
         //3. Verify title:
         //Expected: Yahoo
+        String expectedTitle = "Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos";
+        System.out.println("expectedTitle = " + expectedTitle);
+
+        //actual title
+        String actualTitle = driver.getTitle();
+        System.out.println("actualTitle = " + actualTitle);
+
+        //creating our verification
+        if(actualTitle.equals(expectedTitle)){
+            System.out.println("Title is as expected. Verification PASSED!");
+        }else{
+            System.out.println("Title is as expected. Verification FAILED!!!");
+
+        }
+
+        //closing the browser
+        driver.close();
     }
 }
