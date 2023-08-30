@@ -38,9 +38,20 @@ public class P3_NavigationAndTitleVerification {
             System.out.println("Title verification FAILED!!!");
         }
 
-            //5- Go back to Google by using the .back();
+        //5- Go back to Google by using the .back();
+        driver.navigate().back();
+
         //6- Verify title equals:
         //Expected: Google
+        String expectedGoogleTitle = "Google";
+        String actualGoogleTitle = driver.getTitle();
+
+        if (actualGoogleTitle.equals(expectedGoogleTitle)) {
+            System.out.println("Title verification PASSED!");
+        }else{
+            System.out.println("Title verification FAILED!!!");
+
+        }
 
     }
 }
