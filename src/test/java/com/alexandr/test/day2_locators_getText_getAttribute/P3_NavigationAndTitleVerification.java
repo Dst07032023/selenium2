@@ -25,7 +25,8 @@ public class P3_NavigationAndTitleVerification {
 
         //3- Click to Gmail from top right.
         //<---locating the web element --------><-click->
-        driver.findElement(By.linkText("Gmail")).click();
+        //driver.findElement(By.linkText("Gmail")).click
+        driver.findElement(By.partialLinkText("mail")).click();
 
         //4- Verify title contains:
         //Expected: Gmail
