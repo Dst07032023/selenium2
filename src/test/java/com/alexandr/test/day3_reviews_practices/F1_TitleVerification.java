@@ -24,7 +24,6 @@ public class F1_TitleVerification {
         //2. Go to https://www.facebook.com
         driver.get("https://www.facebook.com");
 
-//        driver.findElement(By.xpath("(//button[@value='1'])[2]")).click();
         driver.findElement(By.xpath("//*[.='Allow all cookies']")).click();
 
         //3. Verify title:
