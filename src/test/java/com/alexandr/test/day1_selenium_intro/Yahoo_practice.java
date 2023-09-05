@@ -45,6 +45,6 @@ public class Yahoo_practice {
         }
 
         //closing the browser
-        driver.close();
+//        driver.close();
     }
 }

@@ -29,7 +29,7 @@ public class T1_ZeroBankHeaderTextVerification {
 
         String actualHeaderText = actualHeader.getText();
 
-        if (actualHeader.equals(expectedHeader)){
+        if (actualHeaderText.equals(expectedHeader)){
             System.out.println("Header verification PASSED!");
         }else{
             System.out.println("Header verification FAILED!!!");

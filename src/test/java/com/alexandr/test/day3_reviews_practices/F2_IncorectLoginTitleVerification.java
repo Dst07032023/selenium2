@@ -18,7 +18,7 @@ public class F2_IncorectLoginTitleVerification {
         driver.manage().window().maximize();
 
         //2. Go to https://www.facebook.com
-        driver.get("https://www.ok.ru");
+        driver.get("https://www.facebook.com");
 
         driver.findElement(By.xpath("//*[.='Allow all cookies']")).click();
 
