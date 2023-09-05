@@ -45,5 +45,14 @@ public class T5_WebOrdersLogin {
         //7- Verify	title equals:
         //Expected:	Web	Orders
 
+        String expectedHomePageTitle = "Web Orders";
+        String actualHomePageTitle = driver.getTitle();
+
+        if (actualHomePageTitle.equals(expectedHomePageTitle)) {
+            System.out.println("Home page title verification PASSED!");
+        }else{
+            System.out.println("Home page title verification FAILED!");
+
+        }
     }
 }
