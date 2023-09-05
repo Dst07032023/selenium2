@@ -33,9 +33,17 @@ public class T5_WebOrdersLogin {
         //4- Enter	username:	Tester
         WebElement inputUsername = driver.findElement(By.id("ctl00_MainContent_username"));
         inputUsername.sendKeys("Tester");
+
         //5- Enter	password:	test
+        WebElement inputPassword = driver.findElement(By.id("ctl00_MainContent_password"));
+        inputPassword.sendKeys("test");
+
         //6- Click	“Sign	In”	button
+        WebElement loginButton = driver.findElement(By.id("ctl00_MainContent_login_button"));
+        loginButton.click();
+
         //7- Verify	title equals:
         //Expected:	Web	Orders
+
     }
 }
