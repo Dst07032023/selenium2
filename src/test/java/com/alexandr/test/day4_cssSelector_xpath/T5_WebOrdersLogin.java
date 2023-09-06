@@ -2,6 +2,7 @@ package com.alexandr.test.day4_cssSelector_xpath;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -36,7 +37,7 @@ public class T5_WebOrdersLogin {
 
         //5- Enter	password:	test
         WebElement inputPassword = driver.findElement(By.id("ctl00_MainContent_password"));
-        inputPassword.sendKeys("test");
+        inputPassword.sendKeys("test" + Keys.ENTER);
 
         //6- Click	“Sign	In”	button
         WebElement loginButton = driver.findElement(By.id("ctl00_MainContent_login_button"));
