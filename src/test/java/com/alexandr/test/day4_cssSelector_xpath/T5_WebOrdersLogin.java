@@ -1,11 +1,9 @@
 package com.alexandr.test.day4_cssSelector_xpath;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.alexandr.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T5_WebOrdersLogin {
 
@@ -13,9 +11,12 @@ public class T5_WebOrdersLogin {
 
         //TC #5:	Basic	login	authentication
         //1- Open	a	chrome	browser
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+//        WebDriverManager.chromedriver().setup();
+//        WebDriver driver = new ChromeDriver();
+
+        WebDriver driver = WebDriverFactory.getDriver("firefox");
         driver.manage().window().maximize();
+
 
         //2- Go	to:
         //http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx
@@ -37,11 +38,11 @@ public class T5_WebOrdersLogin {
 
         //5- Enter	password:	test
         WebElement inputPassword = driver.findElement(By.id("ctl00_MainContent_password"));
-        inputPassword.sendKeys("test" + Keys.ENTER);
+        inputPassword.sendKeys("test");
 
         //6- Click	“Sign	In”	button
         WebElement loginButton = driver.findElement(By.id("ctl00_MainContent_login_button"));
-        loginButton.click();
+//        loginButton.click();
 
         //7- Verify	title equals:
         //Expected:	Web	Orders
