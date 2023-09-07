@@ -29,7 +29,8 @@ public class P6_xpath_MultipleButtons {
 
         button1.click();
 
-        WebElement resultText = driver.findElement(By.xpath(""));
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+
 
         //4. Verify text displayed is as expected:
         //Expected: “Clicked on button one!”
