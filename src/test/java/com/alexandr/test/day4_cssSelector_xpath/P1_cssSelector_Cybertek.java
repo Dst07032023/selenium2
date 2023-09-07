@@ -32,8 +32,11 @@ public class P1_cssSelector_Cybertek {
         WebElement inputLabel = driver.findElement(By.cssSelector("input[name='email']"));
 
         //e. “Retrieve password” button
+        WebElement retrievePasswordButton = driver.findElement(By.cssSelector("button[id='form_submit']"));
 
         //f. “Powered by Cybertek School” text
+        WebElement poweredByText = driver.findElement(By.cssSelector("div[style='text-align: center;']"));
+
         //4. Verify all WebElements are displayed.
     }
 }
