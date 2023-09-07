@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class P3_cssSelector_AmazonTask {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //TC #3: Amazon link number verification
         //1. Open Chrome browser
@@ -16,10 +16,23 @@ public class P3_cssSelector_AmazonTask {
         //2. Go to https://www.amazon.com
         driver.get("https://www.amazon.com");
 
+
         //3. Enter search term (use cssSelector to locate search box)
         WebElement amazonSearchBar = driver.findElement(By.cssSelector("input[id='twotabsearchtextbox']"));
+         Thread.sleep(3000);
 
         amazonSearchBar.sendKeys("wooden spoon" + Keys.ENTER);
-        //4. Verify title contains search term
+        //4. Verify title EQUALS search term
+        //Expected: Amazon.com : wooden spoon
+
+        String expectedTitle = "Amazon.com : wooden spoons";
+        String actualTitle = driver.getTitle();
+
+        if (actualTitle.equals(expectedTitle)) {
+            System.out.println("Title verification PASSED!");
+        }else{
+            System.out.println("Title verification FAILED!!!");
+
+        }
     }
 }
