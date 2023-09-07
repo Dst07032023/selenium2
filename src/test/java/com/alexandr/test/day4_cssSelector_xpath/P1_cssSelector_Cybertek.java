@@ -38,5 +38,17 @@ public class P1_cssSelector_Cybertek {
         WebElement poweredByText = driver.findElement(By.cssSelector("div[style='text-align: center;']"));
 
         //4. Verify all WebElements are displayed.
+
+//        System.out.println("homelink = " + homelink);
+        System.out.println("homelink.isDisplayed() = " + homelink.isDisplayed());
+
+        System.out.println("forgotPasswordHeader.isDisplayed() = " + forgotPasswordHeader.isDisplayed());
+
+        System.out.println("emailLabel.isDisplayed() = " + emailLabel.isDisplayed());
+
+        System.out.println("inputLabel.isDisplayed() = " + inputLabel.isDisplayed());
+
+        System.out.println("retrievePasswordButton.isDisplayed() = " + retrievePasswordButton.isDisplayed());
     }
+
 }
