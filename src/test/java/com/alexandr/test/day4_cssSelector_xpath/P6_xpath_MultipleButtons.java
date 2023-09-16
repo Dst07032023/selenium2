@@ -35,5 +35,14 @@ public class P6_xpath_MultipleButtons {
         //4. Verify text displayed is as expected:
         //Expected: “Clicked on button one!”
 
+        String expectedText = "Clicked on button one!";
+        String actualText = resultText.getText();
+
+        if (actualText.equals(expectedText)) {
+            System.out.println("Result text verification PASSED!");
+        }else{
+            System.out.println("Result text verification FAILED!!!");
+
+        }
     }
 }

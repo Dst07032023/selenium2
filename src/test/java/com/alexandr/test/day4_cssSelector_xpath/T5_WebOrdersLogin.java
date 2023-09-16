@@ -42,7 +42,7 @@ public class T5_WebOrdersLogin {
 
         //6- Click	“Sign	In”	button
         WebElement loginButton = driver.findElement(By.id("ctl00_MainContent_login_button"));
-//        loginButton.click();
+        loginButton.click();
 
         //7- Verify	title equals:
         //Expected:	Web	Orders
