@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class P03_Apple_task {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //TC #03: FINDELEMENTS_APPLE
         //1. Open Chrome browser
@@ -22,12 +22,32 @@ public class P03_Apple_task {
         driver.get("https://www.apple.com");
 
         //3. Click to all of the headers one by one
-            //a. Mac, iPad, iPhone, Watch, TV, Music, Support
+            //Story
+            // Mac
+            // iPad
+            // iPhone
+            // Watch
+            // Vision
+            // AirPods
+            // TV&Home
+            // Entertainment
+            // Accessories
+            // Support
 
         //Storing 11 web elements including "apple" logo, and search box
         List<WebElement> headerLinks = driver.findElements(By.xpath("//ul[@class =" +
                 "'globalnav-submenu-trigger-group']//li/a "));
 
+        for (int eachLink = 1; eachLink < headerLinks.size()-1; eachLink++) {
+
+//            System.out.println(headerLinks.get(eachLink).getText());
+
+            headerLinks.get(eachLink).click();
+            headerLinks = driver.findElements(By.xpath("//ul[@class =" +
+                    "'globalnav-submenu-trigger-group']//li/a "));
+            Thread.sleep(2000);
+
+        }
         //4. Print out the titles of the each page
         //5. Print out total number of links in each page
         //6. While in each page:
