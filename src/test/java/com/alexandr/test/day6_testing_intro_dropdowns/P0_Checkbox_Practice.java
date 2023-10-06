@@ -58,5 +58,7 @@ public class P0_Checkbox_Practice {
         }else {
             System.out.println("Checkbox 2 is selected. Verification FAILED!!!");
         }
+
+        driver.close();
     }
 }
