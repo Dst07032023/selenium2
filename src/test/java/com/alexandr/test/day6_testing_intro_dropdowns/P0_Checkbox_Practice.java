@@ -32,7 +32,7 @@ public class P0_Checkbox_Practice {
 
         //3. Confirm checkbox #2 is SELECTED by default.
         if(checkbox2.isSelected()){
-            System.out.println("Checkbox 1 is selected. Verification PASSED!");
+            System.out.println("Checkbox 2 is selected. Verification PASSED!");
         }else {
             System.out.println("Checkbox 2 is NOT selected. Verification FAILED!!!");
         }
@@ -44,7 +44,14 @@ public class P0_Checkbox_Practice {
         //5. Click checkbox #2 to deselected it.
         Thread.sleep(2000);
         checkbox2.click();
+
         //6. Confirm checkbox #1 is SELECTED.
-        //7. Confirm checkbox #2 is NOT selected.
+        if(checkbox1.isSelected()){
+            System.out.println("Checkbox 1 is selected. Verification PASSED!");
+        }else {
+            System.out.println("Checkbox 1 is NOT selected. Verification FAILED!!!");
+        }
+
+            //7. Confirm checkbox #2 is NOT selected.
     }
 }
