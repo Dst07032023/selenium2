@@ -35,6 +35,7 @@ public class P03_Apple_task {
             // Support
 
         //Storing 11 web elements including "apple" logo, and search box
+
         List<WebElement> headerLinks = driver.findElements(By.xpath("//ul[@class =" +
                 "'globalnav-submenu-trigger-group']//li/a "));
 
@@ -43,13 +44,20 @@ public class P03_Apple_task {
 //            System.out.println(headerLinks.get(eachLink).getText());
 
             headerLinks.get(eachLink).click();
+            Thread.sleep(2000);
             headerLinks = driver.findElements(By.xpath("//ul[@class =" +
                     "'globalnav-submenu-trigger-group']//li/a "));
-            Thread.sleep(2000);
 
+            //4. Print out the titles of the each page
+            System.out.println("Current title in the page:" + driver.getTitle());
+
+            //5. Print out total number of links in each page
+            List<WebElement> allLinks = driver.findElements(By.xpath("//body//a"));
+
+            System.out.println("Number of links in current page: " + allLinks.size());
         }
-        //4. Print out the titles of the each page
-        //5. Print out total number of links in each page
+
+
         //6. While in each page:
             //a. Print out how many link is missing text TOTAL
             //b. Print out how many link has text TOTAl
