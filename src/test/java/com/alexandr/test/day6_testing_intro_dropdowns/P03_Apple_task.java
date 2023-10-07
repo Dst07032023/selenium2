@@ -12,7 +12,7 @@ public class P03_Apple_task {
 
     public static void main(String[] args) throws InterruptedException {
 
-        //TC #03: FINDELEMENTS_APPLE
+        //TC #03: FIND_ELEMENTS_APPLE
         //1. Open Chrome browser
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -45,8 +45,8 @@ public class P03_Apple_task {
 
             headerLinks.get(eachLink).click();
             Thread.sleep(2000);
-            headerLinks = driver.findElements(By.xpath("//ul[@class =" +
-                    "'globalnav-submenu-trigger-group']//li/a "));
+//            headerLinks = driver.findElements(By.xpath("//ul[@class =" +
+//                    "'globalnav-submenu-trigger-group']//li/a "));
 
             //4. Print out the titles of the each page
             System.out.println("Current title in the page:" + driver.getTitle());
@@ -54,12 +54,33 @@ public class P03_Apple_task {
             //5. Print out total number of links in each page
             List<WebElement> allLinks = driver.findElements(By.xpath("//body//a"));
 
-            System.out.println("Number of links in current page: " + allLinks.size());
+            System.out.println("Total number of links in current page: " + allLinks.size());
+
+            int linksWithNoText = 0;
+            int linksWithText = 0;
+
+            for (WebElement each : allLinks) {
+
+                if (each.getText().isEmpty()){
+                    linksWithText++;
+                }else{
+                    linksWithText++;
+                }
+
+            }
+
+            //6. While in each page:
+            //a. Print out how many link is missing text TOTAL
+            System.out.println("--> Current page links with NO TEXT: " + linksWithNoText);
+
+            //b. Print out how many link has text TOTAl
+            System.out.println("--> Current page links with text: " + linksWithText);
+
+            headerLinks = driver.findElements(By.xpath("//ul[@class ='globalnav-" +
+                    "submenu-trigger-group']//li/a"));
+
         }
 
 
-        //6. While in each page:
-            //a. Print out how many link is missing text TOTAL
-            //b. Print out how many link has text TOTAl
     }
 }
