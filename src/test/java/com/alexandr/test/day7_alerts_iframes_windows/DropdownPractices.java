@@ -63,24 +63,34 @@ public class DropdownPractices {
     }
 
     @Test
-    public void tc2_state_dropdown_test(){
+    public void tc2_state_dropdown_test() throws InterruptedException {
 
         //LOCATING STATE DROPDOWN
         Select stateDropdown = new Select(driver.findElement(By.xpath("select[@id='state']")));
 
         //3.Select Illinois
+        Thread.sleep(1000);
         stateDropdown.selectByVisibleText("Illinois");
 
         //4.Select Virginia
+        Thread.sleep(1000);
         stateDropdown.selectByValue("VA");
 
         //5.Select California
+        Thread.sleep(1000);
         stateDropdown.selectByIndex(5);
+//        stateDropdown.selectByVisibleText("California");
 
         //6.Verify final selected option is California.
         //Use all Select options. (visible text, value, index)
 
+        String expectedOptionText = "California";
+        String actualOptionText = stateDropdown.getFirstSelectedOption().getText();
+
+        Assert.assertEquals(actualOptionText, expectedOptionText);
+
     }
+
 
     @AfterClass
     public void tearDownClass() throws InterruptedException {
