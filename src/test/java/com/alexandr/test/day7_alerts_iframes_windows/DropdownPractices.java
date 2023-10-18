@@ -72,8 +72,10 @@ public class DropdownPractices {
         stateDropdown.selectByVisibleText("Illinois");
 
         //4.Select Virginia
+        stateDropdown.selectByValue("VA");
 
         //5.Select California
+        stateDropdown.selectByIndex(5);
 
         //6.Verify final selected option is California.
         //Use all Select options. (visible text, value, index)
@@ -81,7 +83,8 @@ public class DropdownPractices {
     }
 
     @AfterClass
-    public void tearDownClass() {
+    public void tearDownClass() throws InterruptedException {
+        Thread.sleep(5000);
         driver.close();
     }
 }
