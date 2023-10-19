@@ -1,7 +1,9 @@
 package com.alexandr.test.day7_alerts_iframes_windows;
 
 import com.alexandr.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -22,12 +24,33 @@ public class WindowPractice {
 
     @Test
     public void window_test(){
+
+        //Printing out the window handle of the first page opened
+        //String the first windowHandle into a string is a useful practice for  future needs when we need
+        //to switch back to it
+        String mainHandle = driver.getWindowHandle();
+        System.out.println("mainHandle = " + mainHandle);
+
         //4.Assert: Title is "Practice"
-        String titleBeforeClick = driver.getTitle();
+        String actualTitleBeforeClick = driver.getTitle();
         String expectedTitleBeforeClick = "Practice";
+
+        System.out.println("actualTitleBeforeClick = " + actualTitleBeforeClick);
 
 
         //5.Click to: "Click Here" text
+        WebElement clickHereLink = driver.findElement(By.linkText("Click Her"));
+        clickHereLink.click();
+
+        for (String each : driver.getWindowHandles()) {
+            driver.switchTo().window(each);
+            System.out.println("CURRENT TITLE WHILE SWITCHING: " + actualTitleBeforeClick);
+        }
+
+        String actualTitleAfterClick = driver.getTitle();
+
+        System.out.println("actualTitleAfterClick = " + actualTitleAfterClick);
+
         //6.Switch to new Window.
         //7.Assert: Title is "New Window"
     }
