@@ -42,7 +42,7 @@ public class AlertsPractices {
         //5.Verify "You successfuly clicked an alert" text is displayed.
         WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
 
-        String expectedText = "You successfuly clicked an alert";
+        String expectedText = "You successfully clicked an alert";
         String actualText = resultText.getText();
 
         Assert.assertTrue(resultText.isDisplayed(), "Result text is NOT displayed on the page.");
