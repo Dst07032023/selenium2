@@ -45,6 +45,7 @@ public class WindowPractice {
         for (String each : driver.getWindowHandles()) {
             driver.switchTo().window(each);
             System.out.println("CURRENT TITLE WHILE SWITCHING: " + actualTitleBeforeClick);
+
         }
 
         String actualTitleAfterClick = driver.getTitle();
