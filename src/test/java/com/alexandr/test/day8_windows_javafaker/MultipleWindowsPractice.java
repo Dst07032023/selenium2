@@ -22,16 +22,13 @@ public class MultipleWindowsPractice {
     }
 
     @Test
-    public void multiple_window_test(){
+    public void multiple_window_test() throws InterruptedException {
+        Thread.sleep(1000);
         ((JavascriptExecutor) driver).executeScript("window.open('http://google.com','_blank');");
-//        driver.findElement(By.xpath("//*[.='Alles accepteren']")).click();
-
-
+        Thread.sleep(1000);
         ((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
-//        driver.findElement(By.xpath("(//button[@class='wt-btn wt-btn--filled wt-mb-xs-0'])")).click();
-
+        Thread.sleep(1000);
         ((JavascriptExecutor) driver).executeScript("window.open('http://facebook.com','_blank');");
-//        driver.findElement(By.xpath("//*[.='Allow all cookies']")).click();
 
 
         for (String each : driver.getWindowHandles()) {
@@ -47,7 +44,7 @@ public class MultipleWindowsPractice {
             if(driver.getTitle().contains("Etsy{")){
                 Assert.assertTrue(driver.getTitle().contains("Etsy"));
                 break;
-        }
+            }
 
         }
     }
