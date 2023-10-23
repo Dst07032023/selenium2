@@ -39,6 +39,11 @@ public class MultipleWindowsPractice {
             driver.switchTo().window(each);
             System.out.println("Title in current page: " + driver.getTitle());
 
+//            if(driver.getCurrentUrl().contains("etsy.com")){
+//                System.out.println("Title = " + driver.getTitle());
+//                break;
+//            }
+
             if(driver.getTitle().contains("Etsy{")){
                 Assert.assertTrue(driver.getTitle().contains("Etsy"));
                 break;
