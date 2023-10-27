@@ -1,5 +1,6 @@
 package com.alexandr.test.day8_windows_javafaker;
 
+import com.alexandr.utilities.BrowserUtils;
 import com.alexandr.utilities.WebDriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -22,12 +23,14 @@ public class MultipleWindowsPractice {
     }
 
     @Test
-    public void multiple_window_test() throws InterruptedException {
-        Thread.sleep(1000);
+    public void multiple_window_test() {
+        BrowserUtils.sleep(1);
         ((JavascriptExecutor) driver).executeScript("window.open('http://google.com','_blank');");
-        Thread.sleep(1000);
+
+        BrowserUtils.sleep(1);
         ((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
-        Thread.sleep(1000);
+
+        BrowserUtils.sleep(1);
         ((JavascriptExecutor) driver).executeScript("window.open('http://facebook.com','_blank');");
 
 
@@ -45,6 +48,7 @@ public class MultipleWindowsPractice {
                 Assert.assertTrue(driver.getTitle().contains("Etsy"));
                 break;
             }
+
 
         }
     }
