@@ -1,5 +1,6 @@
 package com.alexandr.test.day9_properties_browser_utils;
 
+import com.alexandr.utilities.ConfigurationReader;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
@@ -29,4 +30,10 @@ public class ReadingProperties {
         System.out.println("properties.getProperty(\"username\") = " + properties.getProperty("username"));
     }
 
+    @Test
+    public void using_properties_method(){
+
+        System.out.println("ConfigurationReader.getProperty(\"browser\") = " + ConfigurationReader.getProperty("browser"));
+        System.out.println("ConfigurationReader.getProperty(\"env\") = " + ConfigurationReader.getProperty("env"));
+    }
 }
