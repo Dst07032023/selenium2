@@ -1,18 +1,14 @@
 package com.alexandr.test.day10_webtable_properties_practices;
 
+import com.alexandr.test.base.TestBase;
 import com.alexandr.utilities.ConfigurationReader;
 import com.alexandr.utilities.TableUtils;
-import com.alexandr.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
-public class Table_Tasks {
+public class Table_Tasks extends TestBase {
 
     @Test
     public void task3_return_tims_due_amount() {
@@ -44,7 +40,18 @@ public class Table_Tasks {
 
     @Test
     public void task4_verify_order_method(){
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
+
         TableUtils.verifyOrder(driver, "Tim");
+    }
+
+    @Test
+    public void task5_print_all_names_and_emails() {
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
+
+//        TableUtils.printNamesAndEmail(driver);
     }
 
 }
