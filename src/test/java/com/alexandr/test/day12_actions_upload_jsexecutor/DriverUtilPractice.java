@@ -3,6 +3,7 @@ package com.alexandr.test.day12_actions_upload_jsexecutor;
 import com.alexandr.utilities.ConfigurationReader;
 import com.alexandr.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
@@ -19,6 +20,9 @@ public class DriverUtilPractice {
         WebElement searchBox = Driver.getDriver().findElement(By.name("q"));
 
         String searchValue = "there is no spoon";
+
+        //send the searchValue and press enter
+        searchBox.sendKeys(searchValue + Keys.ENTER);
         //3- Verify value is contained in the title
     }
 }
