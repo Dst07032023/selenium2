@@ -1,9 +1,11 @@
 package com.alexandr.test.day12_actions_upload_jsexecutor;
 
+import com.alexandr.utilities.BrowserUtils;
 import com.alexandr.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ActionsPractices {
@@ -29,14 +31,29 @@ public class ActionsPractices {
 
 
         //2. Hover	over	to	first	image
+        actions.moveToElement(img1).perform();
 
         //3. Assert:
         //a. “name:	user1”	is	displayed
+        Assert.assertTrue(user1.isDisplayed(), "User1 text is not displayed. FAIL!!!");
+
+        BrowserUtils.sleep(1);
+
+
         //4. Hover	over	to	second	image
+        actions.moveToElement(img2).perform();
+
         //5. Assert:
         //a. “name:	user2”	is	displayed
+        Assert.assertTrue(user2.isDisplayed(), "User2 text is not displayed. FAIL!!!");
+
+        BrowserUtils.sleep(1);
         //6. Hover	over	to	third	image
+        actions.moveToElement(img3).perform();
+
         //7. Confirm:
         //a. “name:	user3”	is	displayed
+        Assert.assertTrue(user3.isDisplayed(), "User3 text is not displayed. FAIL!!!");
+
     }
 }
