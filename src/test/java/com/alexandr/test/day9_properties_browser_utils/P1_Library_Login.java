@@ -1,6 +1,7 @@
 package com.alexandr.test.day9_properties_browser_utils;
 
 import com.alexandr.utilities.BrowserUtils;
+import com.alexandr.utilities.ConfigurationReader;
 import com.alexandr.utilities.LibraryUtils;
 import com.alexandr.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -21,7 +22,7 @@ public class P1_Library_Login {
 
         //1. Open browser
         //2. Go to website: http://library2.cybertekschool.com/login.html
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get("http://library2.cybertekschool.com/login.html");

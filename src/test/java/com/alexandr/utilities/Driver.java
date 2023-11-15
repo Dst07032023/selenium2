@@ -31,7 +31,8 @@ public class Driver {
             if (driver == null) {
 
                 /*
-                We read our browser type from configuration.properties file using.getProperty method we're creating in ConfigurationReader clas.
+                We read our browser type from configuration.properties file using.
+                getProperty method we're creating in ConfigurationReader clas.
                  */
                 String browserType = ConfigurationReader.getProperty("browser");
 
@@ -44,6 +45,7 @@ public class Driver {
                         driver = new ChromeDriver();
                         driver.manage().window().maximize();
                         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                        break;
                     case "firefox":
                         WebDriverManager.firefoxdriver().setup();
                         driver = new FirefoxDriver();
@@ -60,7 +62,7 @@ public class Driver {
         }
 
         /*
-        This method makes sure we have some form of driver sesion or driver id has.
+        This method makes sure we have some form of driver session or driver id has.
         Either null or not null is must exist.
          */
 
