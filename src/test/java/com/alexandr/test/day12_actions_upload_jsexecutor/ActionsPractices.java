@@ -56,4 +56,21 @@ public class ActionsPractices {
         Assert.assertTrue(user3.isDisplayed(), "User3 text is not displayed. FAIL!!!");
 
     }
+
+    @Test
+    public void scrolling_test() {
+
+        //Go to http://practice.cybertekschool.com/
+        Driver.getDriver().get("http://practice.cybertekschool.com/");
+
+        // Scroll down to "Powered by Cybertek School"
+        Actions actions = new Actions(Driver.getDriver());
+
+        //Locate "Powered By Cybertek School"
+        WebElement cybertekSchoolLink = Driver.getDriver().findElement(By.linkText("Cybertek School"));
+
+        //Scroll using actions object
+        BrowserUtils.sleep(2);
+        actions.moveToElement(cybertekSchoolLink).perform();
+    }
 }
