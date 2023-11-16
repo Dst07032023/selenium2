@@ -3,6 +3,7 @@ package com.alexandr.test.day12_actions_upload_jsexecutor;
 import com.alexandr.utilities.BrowserUtils;
 import com.alexandr.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -72,5 +73,15 @@ public class ActionsPractices {
         //Scroll using actions object
         BrowserUtils.sleep(2);
         actions.moveToElement(cybertekSchoolLink).perform();
+
+        //Scrolling up using Keys.Page_UP button
+        BrowserUtils.sleep(2);
+        actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();
+
+//        BrowserUtils.sleep(2);
+//        actions.sendKeys(Keys.PAGE_UP).perform();
+
+        BrowserUtils.sleep(2);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
     }
 }
