@@ -16,7 +16,7 @@ public class ActionsPractices {
         TelerikPage telerikPage = new TelerikPage();
         Actions actions = new Actions(Driver.getDriver());
 
-        //Accept cookies by clicking to the butt
+        //Accept cookies by clicking to the button
         BrowserUtils.sleep(2);
         telerikPage.acceptCookiesButton.click();
 
